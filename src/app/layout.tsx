@@ -8,6 +8,7 @@ import {
   SignInButton,
   UserButton,
 } from "@clerk/nextjs";
+import Provider from "@/components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,7 +44,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
+      <Provider>
       <body className={inter.className}><Header />{children}</body>
+      </Provider>
     </html>
     </ClerkProvider>
   );
